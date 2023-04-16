@@ -25,5 +25,11 @@ team add nocol
 team modify nocol collisionRule never
 
 ## 姿勢/アニメーションの設定
-function rusk_magic:book/load
-function rusk_magic:giant/load
+function rusk_magic:objects/book/load
+function rusk_magic:objects/painting/load
+function rusk_magic:objects/giant/load
+function rusk_magic:objects/pegasus/load
+function rusk_magic:objects/dragon/load
+function rusk_magic:objects/stone_swardsman/load
+function rusk_magic:objects/stone_wizard/load
+function rusk_magic:objects/spirit_of_fire/load
