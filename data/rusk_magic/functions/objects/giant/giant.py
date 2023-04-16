@@ -13,8 +13,9 @@ def main():
     # オブジェクト
     obj = mc_object("giant","rusk_magic:")
     # ボーン
-    obj.add_bone("bottom"     ,"root"      ,[   0, 192 ,0])
-    obj.add_bone("up"         ,"root"      ,[   0, 192, 0])
+    obj.add_bone("giant"      ,"root"      ,[   0, 192 ,0])
+    obj.add_bone("bottom"     ,"giant"     ,[   0, 192 ,0])
+    obj.add_bone("up"         ,"giant"     ,[   0, 192, 0])
     obj.add_bone("right_hip"  ,"bottom"    ,[  -9, 192, 0])
     obj.add_bone("right_leg"  ,"right_hip" ,[ -12, 180, 0])
     obj.add_bone("right_lap"  ,"right_leg" ,[ -12, 100, 0])
@@ -117,6 +118,7 @@ def main():
     _pose2.rotate(   "left_arm",[1,0,0],-0.50)
     _pose2.rotate( "left_wrist",[0,1,0],-0.20)
     _pose2.rotate( "left_wrist",[0,0,1],-0.10)
+    _pose2.move( "giant",[0,-8,0])
     # 3 左足を出す
     _pose3:pose =  pose(obj,"right_to_forward")
     _pose3.rotate(  "right_hip",[1,0,0], 0.03)
@@ -160,7 +162,7 @@ def main():
     _pose4.rotate(  "left_arm",[0,0,1],-1.50)
     _pose4.rotate(  "left_arm",[1,0,0], 0.20)
     _pose4.rotate("left_wrist",[0,1,0],-0.20)
-
+    _pose4.move( "giant",[0,-8,0])
 
     ## walk
     _anime = animation(obj,"walk", True, 200)

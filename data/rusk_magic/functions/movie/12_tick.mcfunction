@@ -1,4 +1,4 @@
-#> rusk_magic:movie/2_tick
+#> rusk_magic:movie/12_tick
 ### 本を読む 実行
 
 ## 本をアニメーション

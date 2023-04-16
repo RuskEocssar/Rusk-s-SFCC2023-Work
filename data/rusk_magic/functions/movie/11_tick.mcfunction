@@ -1,4 +1,4 @@
-#> rusk_magic:movie/1_tick
+#> rusk_magic:movie/11_tick
 ### 絨毯で移動 実行
 
 ## 絨毯を移動させる
@@ -13,9 +13,9 @@
 
 ## ゆらゆらさせる
     # カーペット
-    execute at @s on passengers if entity @s[tag=carpet] run function rusk_magic:carpet/flutter/carpet
+    execute at @s on passengers if entity @s[tag=carpet] run function rusk_magic:objects/carpet/flutter/carpet
     # オブジェクト
-    execute at @s on passengers if entity @s[tag=obj] run function rusk_magic:carpet/flutter/obj
+    execute at @s on passengers if entity @s[tag=obj] run function rusk_magic:objects/carpet/flutter/obj
 
 ## スタートのカウント
     # 

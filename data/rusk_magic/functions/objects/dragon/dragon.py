@@ -417,7 +417,7 @@ def main():
     _anime_flap_wings.insert_keyframe(2,0,6,"wave")
     _anime_flap_wings.insert_keyframe(11,6,12,"wave")
     _anime_flap_wings.insert_keyframe(14,12,21,"wave")
-    #_anime_flap_wings.insert_keyframe(28,21,0,"wave")
+    _anime_flap_wings.insert_keyframe(28,21,0,"wave")
     # 出力
     #f.write(_anime_flap_wings.get_commands(31)+"\n\n")
 

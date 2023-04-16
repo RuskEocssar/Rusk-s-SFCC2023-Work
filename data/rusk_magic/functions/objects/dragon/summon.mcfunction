@@ -72,7 +72,8 @@ summon item_display ~ ~ ~ {Tags:[rusk_magic,dragon,dragon_base,temp_base]}
     summon block_display ~ ~ ~ {Tags:[rusk_magic,dragon,wing,temp,left_backward_wing2]       ,transformation:{translation:[-2.70f,  0.550f, -4.400f],left_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 1.572f},scale:[ 0.300f, 3.000f, 2.000f],right_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 0.000f}},shadow_radius:0f,shadow_strength:0f,block_state:{Name:"minecraft:fire"},brightness:{block:5,sky:5}}
     summon block_display ~ ~ ~ {Tags:[rusk_magic,dragon,wing,temp,left_backward_wing3]       ,transformation:{translation:[-2.70f,  0.550f, -7.400f],left_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 1.572f},scale:[ 0.300f, 5.000f, 3.000f],right_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 0.000f}},shadow_radius:0f,shadow_strength:0f,block_state:{Name:"minecraft:fire"},brightness:{block:4,sky:4}}
     summon block_display ~ ~ ~ {Tags:[rusk_magic,dragon,wing,temp,left_backward_wing4]       ,transformation:{translation:[-2.70f,  0.550f, -9.490f],left_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 1.572f},scale:[ 0.300f, 4.000f, 2.000f],right_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 0.000f}},shadow_radius:0f,shadow_strength:0f,block_state:{Name:"minecraft:fire"},brightness:{block:3,sky:3}}
-
+    #
+    summon marker ~ ~ ~ {Tags:[rusk_magic,dragon,marker,temp,]}
 
 ## エンティティの設定
     # 向き
