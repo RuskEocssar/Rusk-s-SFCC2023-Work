@@ -1,4 +1,4 @@
-#> rusk_magic:carpet/move
+#> rusk_magic:objects/carpet/move
 ### カーペットの移動
 
 ## Motionを取得する

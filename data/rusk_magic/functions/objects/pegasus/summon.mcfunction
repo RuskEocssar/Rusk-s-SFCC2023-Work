@@ -2,7 +2,8 @@
 ### 動く絵画の召喚
 
 ## ベース
-summon item_display ~ ~ ~ {Tags:[rusk_magic,pegasus,pegasus_base,temp_base]}
+execute unless score #pegasus_main mode matches 1 run summon item_display ~ ~ ~ {Tags:[rusk_magic,pegasus,pegasus_base,temp_base]}
+execute if score #pegasus_main mode matches 1 run summon silverfish ~ ~ ~ {Tags:[rusk_magic,pegasus,pegasus_base,temp_base],PersistenceRequired:1b,Team:"nocol",Silent:1b,NoGravity:1b,DeathLootTable:"",DeathTime:19s,Invulnerable:1b,ActiveEffects:[{Id:14,Duration:-1,ShowParticles:false}]}
 
 ## パーツ
     summon item_display ~ ~ ~ {Tags:[rusk_magic,pegasus,body,temp,body]              ,transformation:{translation:[ -0.300f,  0.000f,  0.000f],left_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle:-0.050f},scale:[ 2.600f, 1.200f, 0.800f],right_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 0.000f}},shadow_radius:0f,shadow_strength:0f,item:{id:"minecraft:white_wool",Count:1b}}
@@ -54,8 +55,11 @@ summon item_display ~ ~ ~ {Tags:[rusk_magic,pegasus,pegasus_base,temp_base]}
     summon item_display ~ ~ ~ {Tags:[rusk_magic,pegasus,wing,temp,left_feather7]     ,transformation:{translation:[ -0.800f,  0.458f, -3.700f],left_rotation:{axis:[-1.000f, 0.000f, 0.000f],angle: 1.571f},scale:[ 2.500f, 2.500f, 1.000f],right_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 1.300f}},shadow_radius:0f,shadow_strength:0f,item:{id:"minecraft:feather",Count:1b}}
     summon item_display ~ ~ ~ {Tags:[rusk_magic,pegasus,wing,temp,left_feather8]     ,transformation:{translation:[ -0.300f,  0.459f, -3.800f],left_rotation:{axis:[-1.000f, 0.000f, 0.000f],angle: 1.571f},scale:[ 2.100f, 2.100f, 1.000f],right_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 1.000f}},shadow_radius:0f,shadow_strength:0f,item:{id:"minecraft:feather",Count:1b}}
 
-
 ## エンティティの設定
+    # スコア
+    scoreboard players set _ _ 16
+    execute as @e[tag=temp_base] store result score @s time1 run scoreboard players add #pegasus _ 1
+    execute store result score @s time2 store result score @s time3 run scoreboard players operation @e[tag=temp_base] time1 %= _ _
     # 向き
     execute as @e[tag=temp_base] run tp @s ~ ~ ~ ~ ~
     execute as @e[tag=temp] run tp @s ~ ~ ~ ~ ~

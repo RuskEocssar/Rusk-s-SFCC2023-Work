@@ -3,20 +3,20 @@
 
 ## 設定
     # スコア
-    scoreboard players add @s time 1
-    scoreboard players set @s[scores={time=24..}] time 0
+    scoreboard players add @s time1 1
+    scoreboard players set @s[scores={time1=24..}] time1 0
     # 向き
     execute positioned as @s run tp @s ~ ~ ~ ~ 0
 
 ## 時間別に
-    execute if score @s time matches 0 store success score @s _ run scoreboard players add @s y 10
-    execute if score @s time matches 3 store success score @s _ run scoreboard players add @s y 40
-    execute if score @s time matches 6 store success score @s _ run scoreboard players add @s y 40
-    execute if score @s time matches 9 store success score @s _ run scoreboard players add @s y 10
-    execute if score @s time matches 12 store success score @s _ run scoreboard players remove @s y 10
-    execute if score @s time matches 15 store success score @s _ run scoreboard players remove @s y 40
-    execute if score @s time matches 18 store success score @s _ run scoreboard players remove @s y 40
-    execute if score @s time matches 21 store success score @s _ run scoreboard players remove @s y 10
+    execute if score @s time1 matches 0 store success score @s _ run scoreboard players add @s y 10
+    execute if score @s time1 matches 3 store success score @s _ run scoreboard players add @s y 40
+    execute if score @s time1 matches 6 store success score @s _ run scoreboard players add @s y 40
+    execute if score @s time1 matches 9 store success score @s _ run scoreboard players add @s y 10
+    execute if score @s time1 matches 12 store success score @s _ run scoreboard players remove @s y 10
+    execute if score @s time1 matches 15 store success score @s _ run scoreboard players remove @s y 40
+    execute if score @s time1 matches 18 store success score @s _ run scoreboard players remove @s y 40
+    execute if score @s time1 matches 21 store success score @s _ run scoreboard players remove @s y 10
 
 ## 位置反映
     execute if score @s _ matches 1 run data merge entity @s {start_interpolation:0,interpolation_duration:3}

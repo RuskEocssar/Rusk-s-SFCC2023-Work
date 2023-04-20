@@ -2,7 +2,7 @@
 ### 開いたり閉じたり
 
 # 開く
-execute if score @s click_stick matches 1 as @e[tag=book_base] run scoreboard players set @s time 0
+execute if score @s click_stick matches 1 as @e[tag=book_base] run scoreboard players set @s time1 0
 execute as @e[tag=book_base,scores={time=0..99}] run function rusk_magic:book/open
 scoreboard players set @s[scores={click_stick=1}] click_stick 2
 
@@ -15,6 +15,6 @@ execute as @e[tag=book_base,scores={time=100..199}] run function rusk_magic:book
 scoreboard players set @s[scores={click_stick=3}] click_stick 4
 
 # 閉じる
-execute if score @s click_stick matches 5 as @e[tag=book_base] run scoreboard players set @s time 200
+execute if score @s click_stick matches 5 as @e[tag=book_base] run scoreboard players set @s time1 200
 execute as @e[tag=book_base,scores={time=200..299}] run function rusk_magic:book/close
 scoreboard players set @s[scores={click_stick=5..}] click_stick 0

@@ -1,4 +1,4 @@
-#> rusk_magic:movie/11_tick
+#> rusk_magic:movie/magic_carpet
 ### 絨毯で移動 実行
 
 ## 絨毯を移動させる
@@ -14,13 +14,14 @@
 ## ゆらゆらさせる
     # カーペット
     execute at @s on passengers if entity @s[tag=carpet] run function rusk_magic:objects/carpet/flutter/carpet
+    function rusk_magic:objects/carpet/flutter/sound
     # オブジェクト
     execute at @s on passengers if entity @s[tag=obj] run function rusk_magic:objects/carpet/flutter/obj
+    # 本
+    execute at @s on passengers on passengers if entity @s[tag=book] positioned as @s run tp @s ~ ~ ~ ~90 0
+    # 絵画
+    execute at @s on passengers on passengers if entity @s[tag=painting] positioned as @s run tp @s ~ ~ ~ ~-90 0
+    # 自動書記
+    execute at @s on passengers on passengers if entity @s[tag=note] positioned as @s run tp @s ~ ~ ~ ~ 0
 
-## スタートのカウント
-    # 
-    execute if score #root time matches 240 run title @a actionbar {"text":"5"}
-    execute if score #root time matches 260 run title @a actionbar {"text":"4"}
-    execute if score #root time matches 280 run title @a actionbar {"text":"3"}
-    execute if score #root time matches 300 run title @a actionbar {"text":"2"}
-    execute if score #root time matches 320 run title @a actionbar {"text":""}
+## サウンド

@@ -2,7 +2,7 @@
 ### 召喚
 
 ## ベース
-summon item_display ~ ~ ~ {Tags:[rusk_magic,dragon,dragon_base,temp_base]}
+summon silverfish ~ ~ ~ {Tags:[rusk_magic,dragon,dragon_base,temp_base],PersistenceRequired:1b,Team:"nocol",Silent:1b,NoGravity:1b,DeathLootTable:"",DeathTime:19s,Invulnerable:1b,ActiveEffects:[{Id:14,Duration:-1,ShowParticles:false}]}
 
 ## パーツ
     # 体
@@ -76,6 +76,8 @@ summon item_display ~ ~ ~ {Tags:[rusk_magic,dragon,dragon_base,temp_base]}
     summon marker ~ ~ ~ {Tags:[rusk_magic,dragon,marker,temp,]}
 
 ## エンティティの設定
+    # スコア
+    scoreboard players set @e[tag=temp_base] time -1
     # 向き
     execute as @e[tag=temp_base] run tp @s ~ ~ ~ ~ ~
     execute as @e[tag=temp] run tp @s ~ ~ ~ ~ ~

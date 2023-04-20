@@ -3,7 +3,7 @@
 
 ## カーペット用のディスプレイを召喚
     # ベース
-    summon silverfish ~ ~ ~ {Tags:[rusk_magic,magic_carpet,carpet_base,temp_base],CustomName:'{"text":"AA"}',Team:"nocol",Silent:1b,NoGravity:1b,DeathLootTable:"",DeathTime:19s,Invulnerable:1b,ActiveEffects:[{Id:14,Duration:-1,ShowParticles:false}]}
+    summon silverfish ~ ~ ~ {Tags:[rusk_magic,magic_carpet,carpet_base,temp_base],PersistenceRequired:1b,Team:"nocol",Silent:1b,NoGravity:1b,DeathLootTable:"",DeathTime:19s,Invulnerable:1b,ActiveEffects:[{Id:14,Duration:-1,ShowParticles:false}]}
     # カーペット部分
     summon item_display ~ ~ ~ {Tags:[rusk_magic,magic_carpet,carpet,carpet_row0,temp],item:{id:"minecraft:orange_wool",Count:1b}, transformation:{translation:[-0.8f,0f,-1.2f],scale:[0.8f,0.04f,0.4f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f]}}
     summon item_display ~ ~ ~ {Tags:[rusk_magic,magic_carpet,carpet,carpet_row0,temp],item:{id:"minecraft:orange_wool",Count:1b}, transformation:{translation:[0f,0f,-1.2f],scale:[0.8f,0.04f,0.4f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f]}}
@@ -50,13 +50,16 @@
         summon item_display ~ ~ ~ {Tags:[rusk_magic,magic_carpet,obj,wither_skeleton_skull,04,temp],item:{id:"wither_skeleton_skull",Count:1b},transformation:{translation:[1f,0.4f,-0.6f],scale:[0.55f,0.55f,0.55f],left_rotation:{axis:[0f,1f,0f],angle:0.1f},right_rotation:[0f,0f,0f,1f]}}
 
 ## エンティティ達の初期設定
+    # スコア
+    scoreboard players set @e[tag=temp_base] time1 -1
+    scoreboard players set @e[tag=temp_base] time2 -1
     # 向き
     execute as @e[tag=temp_base] run tp @s ~ ~ ~ ~ ~
     execute as @e[tag=temp] run tp @s ~ ~ ~ ~ ~
     # ライド
     execute as @e[tag=temp] run ride @s mount @e[tag=temp_base,limit=1]
     # スコア初期設定
-    execute as @e[tag=temp_base] run function rusk_magic:objects/carpet/flutter/init
+    execute as @e[tag=temp_base] run function rusk_magic:objects/carpet/flutter/score
     # タグ削除
     tag @e[tag=temp] remove temp
     tag @e[tag=temp_base] remove temp_base

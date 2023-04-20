@@ -3,7 +3,9 @@
 
 ## スコアボード
 scoreboard objectives add _ dummy
-scoreboard objectives add time dummy
+scoreboard objectives add time1 dummy
+scoreboard objectives add time2 dummy
+scoreboard objectives add time3 dummy
 scoreboard objectives add mode dummy
 scoreboard objectives add tls_x1 dummy
 scoreboard objectives add tls_x2 dummy
@@ -27,9 +29,7 @@ team modify nocol collisionRule never
 ## 姿勢/アニメーションの設定
 function rusk_magic:objects/book/load
 function rusk_magic:objects/painting/load
+function rusk_magic:objects/note/load
 function rusk_magic:objects/giant/load
 function rusk_magic:objects/pegasus/load
 function rusk_magic:objects/dragon/load
-function rusk_magic:objects/stone_swardsman/load
-function rusk_magic:objects/stone_wizard/load
-function rusk_magic:objects/spirit_of_fire/load

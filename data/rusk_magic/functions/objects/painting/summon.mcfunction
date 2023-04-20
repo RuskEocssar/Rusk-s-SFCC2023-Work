@@ -23,6 +23,8 @@ summon item_display ~ ~ ~ {Tags:[rusk_magic,painting,painting_base,temp_base]}
     summon item_display ~ ~ ~ {Tags:[rusk_magic,painting,temp,wrist]     ,transformation:{translation:[ 0.000f,-0.395f, 0.195f],left_rotation:{axis:[ 1.000f, 0.000f, 0.000f],angle:-0.785f},scale:[ 0.400f, 0.200f, 0.200f],right_rotation:{axis:[ 0.000f, 1.000f, 0.000f],angle: 0.000f}},shadow_radius:0f,shadow_strength:0f,item:{id:"minecraft:brown_wool",Count:1b}}
 
 ## エンティティの設定
+    # スコア
+    scoreboard players set @e[tag=temp_base] time1 -1
     # 向き
     execute as @e[tag=temp_base] run tp @s ~ ~ ~ ~ ~
     execute as @e[tag=temp] run tp @s ~ ~ ~ ~ ~

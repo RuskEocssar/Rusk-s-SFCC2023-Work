@@ -142,8 +142,8 @@ def main():
     _pose4.move("arms",[0,0,0.001],align="global",target="wrist")
     _pose4.move("head",[0,0,0.001],align="global")
     _pose4.move("face",[0,0,0.001],align="global")
-    _pose4.move("eyebrows",[0,-0.015,0])
-    _pose4.rotate("eyebrows",[0,0,1],0.08)
+    _pose4.move("eyebrows",[0,-0.01,0])
+    _pose4.rotate("eyebrows",[0,0,1],0.1)
     _pose4.move("eyebrows",[0,0,0.002],align="global",target="eyebrows")
     _pose4.scale("eyes",[1,0.8,1])
     _pose4.move("right_eye",[0.02,0,0],target="right_pupil")
@@ -187,7 +187,7 @@ def main():
     _frame.move("frame",[0,0.1,0])
     _frame.rotate("frame",[1,0,0],-0.4)
     # 12 下端
-    _frame:pose = _anime.copy_keyframe(12,0,operation="reset",bones=["frame"])
+    _frame:pose = _anime.copy_keyframe(12,0,operation="reset",bones=("frame",))
     _anime.copy_pose(_frame,_pose0,1)
     _frame.move("frame",[0,-0.1,0])
     _frame.rotate("frame",[1,0,0],-0.4)
@@ -201,11 +201,17 @@ def main():
     _frame:pose = _anime.add_keyframe(0)
     _anime.copy_pose(_frame,_pose1,1)
     _frame.move("frame",[0,0.1,0])
-    _frame.rotate("frame",[1,0,0],-0.4)
+    _frame.rotate("frame",[1,0,0],-0.3)
+    _frame.rotate("frame",[0,1,0],0.3)
+    _frame.move("frame",[-1.0,0.6,-0.1])
+    _frame.scale("frame",[0.8,0.8,0.8])
     # 24 下端
-    _frame:pose = _anime.copy_keyframe(24,0,operation="reset",bones=["frame"])
+    _frame:pose = _anime.copy_keyframe(24,0,operation="reset",bones=("frame",))
     _frame.move("frame",[0,-0.1,0])
-    _frame.rotate("frame",[1,0,0],-0.4)
+    _frame.rotate("frame",[1,0,0],-0.3)
+    _frame.rotate("frame",[0,1,0],0.3)
+    _frame.move("frame",[-1.0,0.6,-0.1])
+    _frame.scale("frame",[0.8,0.8,0.8])
     # 出力
     f.write(_anime.get_commands()+"\n\n")
 
@@ -242,23 +248,42 @@ def main():
     # 出力
     f.write(_anime.get_commands()+"\n\n")
 
+    ## いない状態でゆらゆら
+    _anime.name = "fluffy_empty"
+    # 0 上端
+    _frame:pose = _anime.keyframes[0]
+    _frame.scale("villager",[1,0.05,1])
+    _frame.move("villager",[0.0,-0.05,0])
+    # 12 下端
+    _frame:pose = _anime.keyframes[24]
+    _frame.scale("villager",[1,0.05,1])
+    _frame.move("villager",[0.0,-0.05,0])
+    # 出力
+    f.write(_anime.get_commands()+"\n\n")
+
 
     ## 慌てて隠れる ゆらゆらしながら
-    _anime :animation = animation(obj, "hide",False,200)
+    _anime :animation = animation(obj, "hide",False,36)
     # 0 横目
     _frame:pose = _anime.add_keyframe(0)
     _anime.copy_pose(_frame,_pose4,1)
     _frame.move("frame",[0,0.1,0])
-    _frame.rotate("frame",[1,0,0],-0.4)
+    _frame.rotate("frame",[1,0,0],-0.3)
+    _frame.rotate("frame",[0,1,0],0.3)
+    _frame.move("frame",[-1.0,0.6,-0.1])
+    _frame.scale("frame",[0.8,0.8,0.8])
     # 12 下端
-    _frame:pose = _anime.copy_keyframe(12,0,operation="reset",bones=["frame"])
+    _frame:pose = _anime.copy_keyframe(12,0,operation="reset",bones=("frame",))
     _frame.move("frame",[0,-0.1,0])
-    _frame.rotate("frame",[1,0,0],-0.4)
+    _frame.rotate("frame",[1,0,0],-0.3)
+    _frame.rotate("frame",[0,1,0],0.3)
+    _frame.move("frame",[-1.0,0.6,-0.1])
+    _frame.scale("frame",[0.8,0.8,0.8])
     # 3
-    _frame:pose = _anime.insert_keyframe(3,0,12,"wave","wave","inherit",["frame"])
+    _frame:pose = _anime.insert_keyframe(3,0,12,"wave","inherit",("frame",))
     _anime.copy_pose(_frame,_pose4,1)
     # 5 驚く 
-    _frame:pose = _anime.insert_keyframe(5,0,12,"wave","wave","inherit",["frame"])
+    _frame:pose = _anime.insert_keyframe(5,0,12,"wave","inherit",("frame",))
     _anime.copy_pose(_frame,_pose4,1,)
     _frame.reset_bone("eyes","eyebrows")
     _frame.scale("eyes",[1,0,1])
@@ -266,30 +291,35 @@ def main():
     _frame.rotate("eyebrows",[0,0,1],0.04)
     _frame.scale("villager",[1,0.7,1])
     # 6 
-    _frame:pose = _anime.insert_keyframe(6,0,12,"wave","inherit",["frame"])
+    _frame:pose = _anime.insert_keyframe(6,0,12,"wave","inherit",("frame",))
     _anime.copy_pose(_frame,_pose2,1)
     _frame.scale("villager",[1,1.15,1])
     # 8 
-    _frame:pose = _anime.insert_keyframe(8,0,12,"wave","inherit",["frame"])
+    _frame:pose = _anime.insert_keyframe(8,0,12,"wave","inherit",("frame",))
     _anime.copy_pose(_frame,_pose2,1)
     # 12
     _frame:pose = _anime.keyframes[12]
     _anime.copy_pose(_frame,_pose2,1,)
     # 9
-    _frame:pose = _anime.insert_keyframe(9,0,12,"wave","inherit",["frame"])
+    _frame:pose = _anime.insert_keyframe(9,0,12,"wave","inherit",("frame",))
     _anime.copy_pose(_frame,_pose2,1,)
     # 24
-    _frame:pose = _anime.insert_keyframe(24,0,12,"wave","inherit",["frame"])
+    _frame:pose = _anime.insert_keyframe(24,0,12,"wave","inherit",("frame",))
     _anime.copy_pose(_frame,_pose2,1,)
     # 26
-    _frame:pose = _anime.insert_keyframe(26,0,12,"wave","inherit",["frame"])
+    _frame:pose = _anime.insert_keyframe(26,0,12,"wave","inherit",("frame",))
     _anime.copy_pose(_frame,_pose5,1,)
     _frame.scale("villager",[1,1.15,1])
     # 27
-    _frame:pose = _anime.insert_keyframe(27,0,12,"wave","inherit",["frame"])
+    _frame:pose = _anime.insert_keyframe(27,0,12,"wave","inherit",("frame",))
     _anime.copy_pose(_frame,_pose5,1,)
     # 29
-    _frame:pose = _anime.insert_keyframe(29,0,12,"wave","inherit",["frame"])
+    _frame:pose = _anime.insert_keyframe(29,0,12,"wave","inherit",("frame",))
+    _anime.copy_pose(_frame,_pose5,1,)
+    _frame.scale("villager",[1,0.05,1])
+    _frame.move("villager",[0.0,-0.05,0])
+    # 36
+    _frame:pose = _anime.insert_keyframe(36,0,12,"wave","inherit",("frame",))
     _anime.copy_pose(_frame,_pose5,1,)
     _frame.scale("villager",[1,0.05,1])
     _frame.move("villager",[0.0,-0.05,0])

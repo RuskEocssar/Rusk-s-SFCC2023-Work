@@ -28,6 +28,8 @@ summon item_display ~ ~ ~ {Tags:[rusk_magic,book,book_base,temp_base]}
     summon text_display ~ ~ ~ {Tags:[rusk_magic,book,temp,page4_back_text]  ,transformation:{translation:[ 0.000f,-0.150f, 0.000f],left_rotation:{axis:[ 0.000f,-1.000f, 0.000f],angle: 1.571f},scale:[ 0.050f, 0.050f, 1.000f],right_rotation:{axis:[ 0.000f, 0.000f, 1.000f],angle: 0.000f}},shadow_radius:0f,shadow_strength:0f,text:'{"text":"Between their loved ones and wild war\'s desolution. Blest with victry and peace, may the heav\'n-rescued land. Praise the power that hath made and preserved us a nation. Then conquer we must when our cause it is just. And this be our motto: \\"In God is our trust!\\" And the star-spangled banner in triumph shall wave, O\'er the land of the free and the home of the brave! Oh say can you see by the dawn\'s early light What so proudly we hailedat the twilight\'s last gleaming? Whose broad stripes and bright stars through the perilous fight.O\'er the ramparts we watchedwere so gallantly streaming? And the rockets\' red glare the bombs bursting in air.","font":"alt","color":"#333333","bold":true}',line_width:180,background:0}
 
 ## エンティティの設定
+    # スコア
+    scoreboard players set @e[tag=temp_base] time1 -1
     # 向き
     execute as @e[tag=temp_base] run tp @s ~ ~ ~ ~ ~
     execute as @e[tag=temp] run tp @s ~ ~ ~ ~ ~
